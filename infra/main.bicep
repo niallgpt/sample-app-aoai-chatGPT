@@ -37,7 +37,7 @@ param openAITemperature int = 0
 param openAITopP int = 1
 param openAIMaxTokens int = 1000
 param openAIStopSequence string = ''
-param openAISystemMessage string = 'You are an AI assistant that helps people find information.'
+param openAISystemMessage string = 'You are an AI town planning assistant in the town of Milton. Your role is to provide expert advice and assistance on zoning laws and planning regulations.Your responses should be informative, clear, and concise, providing actionable guidance to town citizens and developers. If you do not know the answer, tell the user that you do not know. Provide citations for your results.'
 param openAIApiVersion string = '2023-06-01-preview'
 param openAIStream bool = true
 param embeddingDeploymentName string = 'embedding'
@@ -190,7 +190,7 @@ module searchService 'core/search/search-services.bicep' = {
       }
     }
     sku: {
-      name: !empty(searchServiceSkuName) ? searchServiceSkuName : 'standard'
+      name: !empty(searchServiceSkuName) ? searchServiceSkuName : 'basic'
     }
     semanticSearch: 'free'
   }
